@@ -1,0 +1,240 @@
+/*Formuläret centreras på mitten på stora skärmar*/
+.form-box {
+    width: 80%;
+    height: fit-content;
+    margin: auto;
+}
+
+#loan-form{
+    width: 100%;
+    height: fit-content;
+}
+
+.field{
+    width: auto;
+    height: fit-content;
+    margin-top: 4em;
+    margin-bottom: 5em;
+    border-radius: 2em;
+    border: 1px solid black;
+}
+
+legend{
+    font-size: xx-large;
+    font-weight: bold;
+    color: black;
+}
+
+label{
+    color: black;
+    font-size: large;
+    margin-bottom: 1em;
+}
+
+input, select, textarea{
+    min-width: 30px;
+    border-radius: 1em;
+    padding: 0.5em;
+    font-size: medium;
+    border: 1px solid black;
+    background-color: white;
+    font-family: inherit; 
+    line-height: normal; 
+}
+
+/*Hover-effekt på inputfälten.*/
+input:hover, select:hover, textarea:hover{
+    border: 2px solid black;
+}
+
+/*Formuläret ligger i en grid-container med 2 kolumner.*/
+.grid-container{
+    width: auto;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5.1em 5.1em 5.1em 5.1em 5.1em;
+    gap: 3em;
+    column-gap: 8em;
+    padding: 3em;
+    padding-bottom: 0;
+}
+
+/*Varje input-fält hamnar i varsin grid-"ruta".*/
+.input-1 {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-2 {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-3 {
+    grid-column: 1;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Checkboxen hamnar horisontellt bredvid etiketten.*/
+.input-4 {
+    grid-column: 1;
+    grid-row: 4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Checkboxen styleas och får en färg när den är i-checkad.*/
+#employmentInput{
+    height: 1.3em;
+    width: 1.3em;
+    border-radius: 1em;
+}
+
+#employmentInput:checked{
+    accent-color: #ace0f9;
+}
+
+.input-5 {
+    grid-column: 1;
+    grid-row: 5;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-6 {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-7 {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-8 {
+    grid-column: 2;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-9 {
+    grid-column: 2;
+    grid-row: 4 / span 4;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Varningstexten görs röd.*/
+p{
+    color: red;
+    padding: 0.5em;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+button {
+    width: 5em;
+    height: 3em;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 1em;
+    transition: ease 1s;
+}
+
+button:hover{
+    background-color: #fff1eb;
+    transform: scale(1.1, 1.1);
+}
+
+/*Formuläret tar mer plats på skärmen vid
+mindre skärmstorlekar. Och det blir mindre
+mellanrum mellan inputfälten.*/
+@media(max-width: 900px){
+    .form-box{
+    width: 95%;
+    }
+    .grid-container{
+    column-gap: 3em;
+    }
+}
+
+/*På mobilskärmar hamnar alla formulär-
+fält under varandra.*/
+@media(max-width: 550px){
+    legend{
+    font-size: x-large;
+    font-weight: bold;
+    color: black;
+    }
+    
+    .grid-container{
+    grid-template-columns: 1fr;
+    grid-template-rows: (9, auto);
+    justify-content: center;
+    padding: 1em;
+    margin-top: 2em;
+    }
+    .input-1{
+    grid-column: 1;
+    grid-row: 1;
+    } 
+    .input-2{
+    grid-column: 1;
+    grid-row: 2;
+    } 
+    .input-3{
+    grid-column: 1;
+    grid-row: 3;
+    } 
+    .input-4{
+    grid-column: 1;
+    grid-row: 4;
+    } 
+    .input-5{
+    grid-column: 1;
+    grid-row: 5;
+    } 
+    .input-6{
+    grid-column: 1;
+    grid-row: 6;
+    } 
+    .input-7{
+    grid-column: 1;
+    grid-row: 7;
+    } 
+    .input-8{
+    grid-column: 1;
+    grid-row: 8;
+    } 
+    .input-9{
+    grid-column: 1;
+    grid-row: 9;
+    } 
+
+    body{
+    width: 100%;
+    height: 100%;
+    }
+
+    input, select, textarea{
+    width: 100%;
+    }
+}
